@@ -1,47 +1,96 @@
-$card-height: 340px;
+$card-height: 360px;
 
-  .main-cards {
-    font-size: 13px;
-    text-align: center;
+.main-cards {
+    h5.product-title {
+        margin-left: 10%;
+    }
+
+    .card {
+        height: $card-height;
+        margin: 10px 0;
+        z-index: -200;
+    }
+
+    .card-tagline {
+        font-size: 12px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #ffffff;
+    }
+
+    .card-headline {
+        margin: 10px 0;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 300;
+        color: #ffffff;
+    }
+
+    .text-shadow {
+        text-shadow: 1px 0 0 rgba(128,128,128,0.2), -1px 0 0 rgba(128,128,128,0.2), 0 1px 0 rgba(128,128,128,0.2), 0 -1px 0 rgba(128,128,128,0.2), 1px 1px rgba(128,128,128,0.2), -1px -1px 0 rgba(128,128,128,0.2), 1px -1px 0 rgba(128,128,128,0.2), -1px 1px 0 rgba(128,128,128,0.2);
+    }
 
     .les-cards-products {
-      max-width: 800px;
-      margin: 10px auto;
-      display: grid;
-      grid-auto-flow: dense;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));  grid-gap: 20px;
+        max-width: 840px;
+        margin: 16px auto 40px;
+        display: grid;
+        grid-auto-flow: dense;
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        grid-gap: 1em;
 
-      .les-card-double {
-        grid-column-end: span 2;
-        grid-row-end: span 2;
-        background-size: cover;
-        height: $card-height * 2 + 20px;
-        h6 {
-          margin-bottom: 3rem;
+        .les-card-double {
+            grid-column-end: span 2;
+            height: $card-height;
         }
-      }
 
-      .les-card-single {
-        background-size: cover;
-        height: $card-height;
-        h6 {
-          margin-bottom: 2rem;
+        .les-card-single {
+            height: $card-height;
         }
-      }
+
+        .stamp-card {
+            position: absolute;
+        }
     }
+}
+@media (max-width: 414px) {
+    .main-cards {
+        .card-headline {
+            font-size: 14px;
+            line-height: 17px;
+            font-weight: 400;
+        }
 
-    @media (max-width: 560px) {
-      .les-cards-products {
-        margin: 10px 10%;
-      }
+        .les-cards-products {
+            margin: 10px 5%;
+            grid-gap: 1em;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            grid-gap: 0.8em;
 
-      .les-card-double {
-        height: $card-height * 2;
-        grid-column-end: span 1;
-      }
+            .les-card-double {
+                height: 300px !important;
 
-      .les-card-single {
-        height: $card-height;
-      }
+                .img-fluid {
+                    height: 280px !important;
+                }
+            }
+
+            .les-card-single {
+                height: 300px !important;
+
+                .img-fluid {
+                    height: 250 !important;
+                }
+            }
+        }
     }
-  }
+}
+
+@media (max-width: 768px) {
+    .main-cards {
+        .les-cards-products {
+            margin: 10px 5%;
+            grid-column-end: span 2;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+    }
+}
